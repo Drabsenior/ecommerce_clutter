@@ -9,7 +9,7 @@ class BottomNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20),
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: GNav(
         color: Colors.grey[400],
         activeColor: Colors.grey.shade700,
@@ -21,11 +21,14 @@ class BottomNavbar extends StatelessWidget {
         tabs: const [
           GButton(
             icon: Icons.home,
-            text:"Shop"
+            text:"Shop",
+            padding: EdgeInsets.symmetric(vertical: 15,horizontal: 18),
           ),
           GButton(
             icon: Icons.shopping_bag_rounded,
             text: 'Cart',
+            padding: EdgeInsets.symmetric(vertical: 15,horizontal: 18),
+
           )
         ],
       ),
