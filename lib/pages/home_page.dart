@@ -30,6 +30,72 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      appBar: AppBar(
+        leading: Builder(
+          builder: (context)=>IconButton(
+          icon: Icon(Icons.menu),
+          onPressed:(){
+            Scaffold.of(context).openDrawer();
+          } 
+          )
+        ),
+        backgroundColor: Colors.grey[300],
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.grey[900],
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Image.asset('lib/images/nike-logo.png',
+              color: Colors.white,
+              ),
+              margin: EdgeInsetsDirectional.only(bottom: 40),
+            ),
+           
+           Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 20),
+             child: ListTile(
+              leading: Icon(Icons.home,color: Colors.white,),
+              title: Text(
+                "Home",
+                
+                style: TextStyle(
+                  color: Colors.white
+                ),
+              ),
+             ),
+           ),
+           Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 20),
+             child: ListTile(
+              leading: Icon(Icons.info,color: Colors.white,),
+              title: Text(
+                "About",
+                
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+             ),
+           ),
+           Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 20),
+             child: ListTile(
+              leading: Icon(Icons.logout,color: Colors.white,),
+              title: Text(
+                "Logout",
+                
+                style: TextStyle(
+                  color: Colors.white
+                ),
+              ),
+             ),
+           )
+
+          ],
+          
+        ),
+      ),
       body: _pages[_selectedIndex],
        bottomNavigationBar: BottomNavbar(onTabChange: (index)=> navigationBottomBar(index),),
     );
